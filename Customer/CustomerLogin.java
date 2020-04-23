@@ -3,13 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package rapidrentals;
 
-
+/**
+ *
+ * @author DELL
+ */
 public class CustomerLogin extends javax.swing.JFrame {
 
     /**
-     * Creates new form Frame3
+     * Creates new form CustomerLogin
      */
     public CustomerLogin() {
         initComponents();
@@ -24,61 +26,65 @@ public class CustomerLogin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
 
-        NAME_JLABEL = new javax.swing.JLabel();
-        PASS_JLABEL = new javax.swing.JLabel();
-        NAME_jTextField = new javax.swing.JTextField();
-        PASSWORD_jTextField = new javax.swing.JTextField();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jToggleButton2 = new javax.swing.JToggleButton();
+        jPanel1 = new javax.swing.JPanel();
+        NAME_jLabel1 = new javax.swing.JLabel();
+        NAME_jTextField1 = new javax.swing.JTextField();
+        PASSWORD_jLabel2 = new javax.swing.JLabel();
+        PASSWORD_jTextField2 = new javax.swing.JTextField();
+        LOGIN_jToggleButton1 = new javax.swing.JToggleButton();
+        SIGNUP_jToggleButton2 = new javax.swing.JToggleButton();
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Rapid Rentals");
         getContentPane().setLayout(null);
 
-        NAME_JLABEL.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        NAME_JLABEL.setText("NAME");
-        getContentPane().add(NAME_JLABEL);
-        NAME_JLABEL.setBounds(80, 60, 50, 14);
+        NAME_jLabel1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        NAME_jLabel1.setText("     NAME");
+        getContentPane().add(NAME_jLabel1);
+        NAME_jLabel1.setBounds(109, 43, 72, 28);
 
-        PASS_JLABEL.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        PASS_JLABEL.setText("PASSWORD");
-        getContentPane().add(PASS_JLABEL);
-        PASS_JLABEL.setBounds(50, 110, 90, 20);
-
-        NAME_jTextField.addActionListener(new java.awt.event.ActionListener() {
+        NAME_jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NAME_jTextFieldActionPerformed(evt);
+                NAME_jTextField1ActionPerformed(evt);
             }
         });
-        getContentPane().add(NAME_jTextField);
-        NAME_jTextField.setBounds(140, 60, 170, 30);
-        getContentPane().add(PASSWORD_jTextField);
-        PASSWORD_jTextField.setBounds(140, 110, 170, 30);
+        getContentPane().add(NAME_jTextField1);
+        NAME_jTextField1.setBounds(199, 43, 118, 28);
 
-        jToggleButton1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jToggleButton1.setText("LOGIN");
-        getContentPane().add(jToggleButton1);
-        jToggleButton1.setBounds(130, 190, 90, 20);
+        PASSWORD_jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        PASSWORD_jLabel2.setText("PASSWORD");
+        getContentPane().add(PASSWORD_jLabel2);
+        PASSWORD_jLabel2.setBounds(103, 97, 78, 30);
+        getContentPane().add(PASSWORD_jTextField2);
+        PASSWORD_jTextField2.setBounds(199, 97, 118, 30);
 
-        jToggleButton2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jToggleButton2.setText("SIGNUP");
-        jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton2ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jToggleButton2);
-        jToggleButton2.setBounds(275, 260, 110, 23);
+        LOGIN_jToggleButton1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        LOGIN_jToggleButton1.setText("LOGIN");
+        getContentPane().add(LOGIN_jToggleButton1);
+        LOGIN_jToggleButton1.setBounds(143, 158, 105, 31);
+
+        SIGNUP_jToggleButton2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        SIGNUP_jToggleButton2.setText("SIGN UP");
+        getContentPane().add(SIGNUP_jToggleButton2);
+        SIGNUP_jToggleButton2.setBounds(285, 243, 105, 33);
 
         pack();
     }// </editor-fold>                        
 
-    private void NAME_jTextFieldActionPerformed(java.awt.event.ActionEvent evt) {                                                
+    private void NAME_jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {                                                 
         // TODO add your handling code here:
-    }                                               
-
-    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                               
-        // TODO add your handling code here:
-    }                                              
+    }                                                
 
     /**
      * @param args the command line arguments
@@ -97,13 +103,13 @@ public class CustomerLogin extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Frame3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CustomerLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Frame3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CustomerLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Frame3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CustomerLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Frame3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CustomerLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -116,11 +122,12 @@ public class CustomerLogin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify                     
-    private javax.swing.JLabel NAME_JLABEL;
-    private javax.swing.JTextField NAME_jTextField;
-    private javax.swing.JTextField PASSWORD_jTextField;
-    private javax.swing.JLabel PASS_JLABEL;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton2;
+    private javax.swing.JToggleButton LOGIN_jToggleButton1;
+    private javax.swing.JLabel NAME_jLabel1;
+    private javax.swing.JTextField NAME_jTextField1;
+    private javax.swing.JLabel PASSWORD_jLabel2;
+    private javax.swing.JTextField PASSWORD_jTextField2;
+    private javax.swing.JToggleButton SIGNUP_jToggleButton2;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration                   
 }
