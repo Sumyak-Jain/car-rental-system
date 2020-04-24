@@ -8,12 +8,12 @@
  *
  * @author DELL
  */
-public class CustomerLogin extends javax.swing.JFrame {
+public class Customer_Signup extends javax.swing.JFrame {
 
     /**
-     * Creates new form CustomerLogin
+     * Creates new form Customer_Signup
      */
-    public CustomerLogin() {
+    public Customer_Signup() {
         initComponents();
     }
 
@@ -26,33 +26,21 @@ public class CustomerLogin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
         NAME_jLabel1 = new javax.swing.JLabel();
         NAME_jTextField1 = new javax.swing.JTextField();
         PASSWORD_jLabel2 = new javax.swing.JLabel();
         PASSWORD_jTextField2 = new javax.swing.JTextField();
-        LOGIN_jToggleButton1 = new javax.swing.JToggleButton();
-        SIGNUP_jToggleButton2 = new javax.swing.JToggleButton();
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
+        SAVE_jToggleButton1 = new javax.swing.JToggleButton();
+        GO_BACK_jToggleButton2 = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Rapid Rentals");
         getContentPane().setLayout(null);
 
         NAME_jLabel1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        NAME_jLabel1.setText("     NAME");
+        NAME_jLabel1.setText("         NAME");
         getContentPane().add(NAME_jLabel1);
-        NAME_jLabel1.setBounds(109, 43, 72, 28);
+        NAME_jLabel1.setBounds(90, 60, 80, 50);
 
         NAME_jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -60,31 +48,59 @@ public class CustomerLogin extends javax.swing.JFrame {
             }
         });
         getContentPane().add(NAME_jTextField1);
-        NAME_jTextField1.setBounds(199, 43, 118, 28);
+        NAME_jTextField1.setBounds(180, 70, 120, 30);
 
         PASSWORD_jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         PASSWORD_jLabel2.setText("PASSWORD");
         getContentPane().add(PASSWORD_jLabel2);
-        PASSWORD_jLabel2.setBounds(103, 97, 78, 30);
+        PASSWORD_jLabel2.setBounds(90, 120, 70, 40);
+
+        PASSWORD_jTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PASSWORD_jTextField2ActionPerformed(evt);
+            }
+        });
         getContentPane().add(PASSWORD_jTextField2);
-        PASSWORD_jTextField2.setBounds(199, 97, 118, 30);
+        PASSWORD_jTextField2.setBounds(180, 120, 120, 30);
 
-        LOGIN_jToggleButton1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        LOGIN_jToggleButton1.setText("LOGIN");
-        getContentPane().add(LOGIN_jToggleButton1);
-        LOGIN_jToggleButton1.setBounds(143, 158, 105, 31);
+        SAVE_jToggleButton1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        SAVE_jToggleButton1.setText("SAVE");
+        SAVE_jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SAVE_jToggleButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(SAVE_jToggleButton1);
+        SAVE_jToggleButton1.setBounds(133, 179, 100, 30);
 
-        SIGNUP_jToggleButton2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        SIGNUP_jToggleButton2.setText("SIGN UP");
-        getContentPane().add(SIGNUP_jToggleButton2);
-        SIGNUP_jToggleButton2.setBounds(285, 243, 105, 33);
+        GO_BACK_jToggleButton2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        GO_BACK_jToggleButton2.setText("GO BACK");
+        GO_BACK_jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GO_BACK_jToggleButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(GO_BACK_jToggleButton2);
+        GO_BACK_jToggleButton2.setBounds(10, 253, 100, 30);
 
         pack();
     }// </editor-fold>                        
 
+    private void PASSWORD_jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {                                                     
+        // TODO add your handling code here:
+    }                                                    
+
     private void NAME_jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {                                                 
         // TODO add your handling code here:
     }                                                
+
+    private void SAVE_jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                                    
+        // TODO add your handling code here:
+    }                                                   
+
+    private void GO_BACK_jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                                       
+        // TODO add your handling code here:
+    }                                                      
 
     /**
      * @param args the command line arguments
@@ -103,31 +119,30 @@ public class CustomerLogin extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CustomerLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Customer_Signup.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CustomerLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Customer_Signup.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CustomerLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Customer_Signup.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CustomerLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Customer_Signup.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CustomerLogin().setVisible(true);
+                new Customer_Signup().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify                     
-    private javax.swing.JToggleButton LOGIN_jToggleButton1;
+    private javax.swing.JToggleButton GO_BACK_jToggleButton2;
     private javax.swing.JLabel NAME_jLabel1;
     private javax.swing.JTextField NAME_jTextField1;
     private javax.swing.JLabel PASSWORD_jLabel2;
     private javax.swing.JTextField PASSWORD_jTextField2;
-    private javax.swing.JToggleButton SIGNUP_jToggleButton2;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JToggleButton SAVE_jToggleButton1;
     // End of variables declaration                   
 }
