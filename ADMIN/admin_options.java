@@ -28,8 +28,8 @@ public class admin_options extends javax.swing.JFrame {
     private void initComponents() {
 
         manage_cars = new javax.swing.JToggleButton();
-        manage_booking = new javax.swing.JToggleButton();
-        manage_customers = new javax.swing.JToggleButton();
+        show_booking = new javax.swing.JToggleButton();
+        show_customers = new javax.swing.JToggleButton();
         logout = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -38,19 +38,19 @@ public class admin_options extends javax.swing.JFrame {
         manage_cars.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         manage_cars.setText("Manage CARS");
 
-        manage_booking.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        manage_booking.setText("Manage BOOKINGS");
-        manage_booking.addActionListener(new java.awt.event.ActionListener() {
+        show_booking.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        show_booking.setText("Show BOOKINGS");
+        show_booking.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                manage_bookingActionPerformed(evt);
+                show_bookingActionPerformed(evt);
             }
         });
 
-        manage_customers.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        manage_customers.setText("Manage CUSTOMERS");
-        manage_customers.addActionListener(new java.awt.event.ActionListener() {
+        show_customers.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        show_customers.setText("Show CUSTOMERS");
+        show_customers.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                manage_customersActionPerformed(evt);
+                show_customersActionPerformed(evt);
             }
         });
 
@@ -64,9 +64,9 @@ public class admin_options extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(101, 101, 101)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(manage_customers, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(show_customers, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(manage_cars, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(manage_booking, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(show_booking, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(123, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -77,11 +77,11 @@ public class admin_options extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(30, 30, 30)
-                .addComponent(manage_booking, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(show_booking, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addComponent(manage_cars, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
-                .addComponent(manage_customers, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(show_customers, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                 .addComponent(logout)
                 .addGap(19, 19, 19))
@@ -90,13 +90,13 @@ public class admin_options extends javax.swing.JFrame {
         pack();
     }// </editor-fold>                        
 
-    private void manage_bookingActionPerformed(java.awt.event.ActionEvent evt) {                                               
+    private void show_bookingActionPerformed(java.awt.event.ActionEvent evt) {                                             
+        // TODO add your handling code here:
+    }                                            
+
+    private void show_customersActionPerformed(java.awt.event.ActionEvent evt) {                                               
         // TODO add your handling code here:
     }                                              
-
-    private void manage_customersActionPerformed(java.awt.event.ActionEvent evt) {                                                 
-        // TODO add your handling code here:
-    }                                                
 
     /**
      * @param args the command line arguments
@@ -135,8 +135,8 @@ public class admin_options extends javax.swing.JFrame {
 
     // Variables declaration - do not modify                     
     private javax.swing.JToggleButton logout;
-    private javax.swing.JToggleButton manage_booking;
     private javax.swing.JToggleButton manage_cars;
-    private javax.swing.JToggleButton manage_customers;
+    private javax.swing.JToggleButton show_booking;
+    private javax.swing.JToggleButton show_customers;
     // End of variables declaration                   
 }
