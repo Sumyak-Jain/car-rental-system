@@ -4,13 +4,10 @@
 name: Java CI
 
 on:
-  push:
-    branches:
-      - master
+
   pull_request:
     branches:
-      - master
-        - Arsh
+      
 
 jobs:
   build-and-run:
