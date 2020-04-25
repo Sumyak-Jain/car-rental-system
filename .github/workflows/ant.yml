@@ -4,16 +4,19 @@
 name: Java CI
 
 on:
+  push:
+    branches:
+      - master
   pull_request:
     branches:
       - master
         - Arsh
 
 jobs:
-  build:
-    name: build
+  build-and-run:
+    name: build and run
 
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
@@ -22,4 +25,5 @@ jobs:
       with:
         java-version: 1.8
     - name: Build with Ant
-      run: ant -noinput -buildfile build.xml
+      run: ant -noinput -buildfile front.java
+    
