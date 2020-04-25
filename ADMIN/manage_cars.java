@@ -3,7 +3,9 @@ package rapid.rentals;
 
 public class manage_cars extends javax.swing.JFrame {
 
-    
+    /**
+     * Creates new form manage_cars
+     */
     public manage_cars() {
         initComponents();
     }
@@ -16,12 +18,13 @@ public class manage_cars extends javax.swing.JFrame {
         search_cars = new javax.swing.JToggleButton();
         add_new = new javax.swing.JToggleButton();
         logout = new javax.swing.JToggleButton();
+        goback = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle(" Rapid Rentals");
 
         search_cars.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        search_cars.setText("Search CARS");
+        search_cars.setText("Show CARS");
         search_cars.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 search_carsActionPerformed(evt);
@@ -34,21 +37,25 @@ public class manage_cars extends javax.swing.JFrame {
         logout.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         logout.setText("LOGOUT");
 
+        goback.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        goback.setText("GO BACK");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(117, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(add_new, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(search_cars, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE))
-                        .addGap(125, 125, 125))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(logout)
-                        .addGap(27, 27, 27))))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(add_new, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(search_cars, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE))
+                .addGap(125, 125, 125))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(goback)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(logout)
+                .addGap(27, 27, 27))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -57,9 +64,11 @@ public class manage_cars extends javax.swing.JFrame {
                 .addComponent(search_cars, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37)
                 .addComponent(add_new, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
-                .addComponent(logout)
-                .addGap(19, 19, 19))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(logout)
+                    .addComponent(goback))
+                .addGap(18, 18, 18))
         );
 
         pack();
@@ -106,6 +115,7 @@ public class manage_cars extends javax.swing.JFrame {
 
     // Variables declaration - do not modify                     
     private javax.swing.JToggleButton add_new;
+    private javax.swing.JToggleButton goback;
     private javax.swing.JToggleButton logout;
     private javax.swing.JToggleButton search_cars;
     // End of variables declaration                   
