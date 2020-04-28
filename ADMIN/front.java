@@ -45,6 +45,11 @@ public class front extends javax.swing.JFrame {
 
         admin.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         admin.setText("ADMIN");
+        admin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adminActionPerformed(evt);
+            }
+        });
         getContentPane().add(admin);
         admin.setBounds(493, 50, 110, 25);
 
@@ -67,6 +72,11 @@ public class front extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>                        
+
+    private void adminActionPerformed(java.awt.event.ActionEvent evt) {                                      
+        admin obj=new admin();
+        obj.setVisible(true);
+    }                                     
 
     /**
      * @param args the command line arguments
