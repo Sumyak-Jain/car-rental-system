@@ -35,7 +35,7 @@ public class admin extends javax.swing.JFrame {
         passwd_txt = new javax.swing.JLabel();
         enter_passwd = new javax.swing.JTextField();
         login_btn = new javax.swing.JToggleButton();
-        logout_btn = new javax.swing.JToggleButton();
+        goback = new javax.swing.JToggleButton();
         validation = new javax.swing.JLabel();
 
         jToggleButton2.setText("jToggleButton2");
@@ -70,15 +70,15 @@ public class admin extends javax.swing.JFrame {
             }
         });
 
-        logout_btn.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        logout_btn.setText("Go Back");
-        logout_btn.addActionListener(new java.awt.event.ActionListener() {
+        goback.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        goback.setText("Go Back");
+        goback.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                logout_btnActionPerformed(evt);
+                gobackActionPerformed(evt);
             }
         });
 
-        validation.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        validation.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         validation.setForeground(new java.awt.Color(255, 0, 0));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -93,20 +93,20 @@ public class admin extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(name_enter, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(132, 132, 132)
-                        .addComponent(login_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(19, 19, 19)
-                        .addComponent(logout_btn))
+                        .addComponent(goback))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(95, 95, 95)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(validation, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(passwd_txt)
-                                .addGap(18, 18, 18)
-                                .addComponent(enter_passwd, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(122, 122, 122))
+                        .addComponent(passwd_txt)
+                        .addGap(18, 18, 18)
+                        .addComponent(enter_passwd, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(142, 142, 142)
+                        .addComponent(login_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(117, 117, 117)
+                        .addComponent(validation, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(185, 185, 185))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -119,12 +119,13 @@ public class admin extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(passwd_txt)
                     .addComponent(enter_passwd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(31, 31, 31)
-                .addComponent(login_btn)
-                .addGap(11, 11, 11)
+                .addGap(18, 18, 18)
                 .addComponent(validation, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addComponent(logout_btn))
+                .addGap(18, 18, 18)
+                .addComponent(login_btn)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                .addComponent(goback)
+                .addContainerGap())
         );
 
         pack();
@@ -138,12 +139,19 @@ public class admin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }                                            
 
-    private void logout_btnActionPerformed(java.awt.event.ActionEvent evt) {                                           
-        // TODO add your handling code here:
-    }                                          
+    private void gobackActionPerformed(java.awt.event.ActionEvent evt) {                                       
+        front obj=new front();
+        obj.setVisible(true);
+    }                                      
 
     private void login_btnActionPerformed(java.awt.event.ActionEvent evt) {                                          
-        if(name_enter.getText().equals("ADMIN123") && enter_passwd.getText().equals("01234") ){
+       if(name_enter.getText().trim().isEmpty()){
+           validation.setText("Name Field is empty");
+       }
+       else if(enter_passwd.getText().trim().isEmpty()){
+           validation.setText("Password Field is empty");
+       }
+        else if(name_enter.getText().equals("ADMIN123") && enter_passwd.getText().equals("01234") ){
         admin_options obj=new admin_options();
         obj.setVisible(true);
         }
@@ -189,9 +197,9 @@ public class admin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify                     
     private javax.swing.JTextField enter_passwd;
+    private javax.swing.JToggleButton goback;
     private javax.swing.JToggleButton jToggleButton2;
     private javax.swing.JToggleButton login_btn;
-    private javax.swing.JToggleButton logout_btn;
     private javax.swing.JTextField name_enter;
     private javax.swing.JLabel name_txt;
     private javax.swing.JLabel passwd_txt;
