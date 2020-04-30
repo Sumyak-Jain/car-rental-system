@@ -50,6 +50,11 @@ public class show_booking extends javax.swing.JFrame {
 
         logout.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         logout.setText("LOGOUT");
+        logout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logoutActionPerformed(evt);
+            }
+        });
 
         Goback.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         Goback.setText("GO BACK");
@@ -89,7 +94,13 @@ public class show_booking extends javax.swing.JFrame {
     }// </editor-fold>                        
 
     private void GobackActionPerformed(java.awt.event.ActionEvent evt) {                                       
-        // TODO add your handling code here:
+       admin_options obj=new admin_options();
+       obj.setVisible(true);
+    }                                      
+
+    private void logoutActionPerformed(java.awt.event.ActionEvent evt) {                                       
+        admin obj=new admin();
+        obj.setVisible(true);
     }                                      
 
     /**
