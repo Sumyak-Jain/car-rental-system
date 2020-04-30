@@ -37,6 +37,11 @@ public class admin_options extends javax.swing.JFrame {
 
         manage_cars.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         manage_cars.setText("Manage CARS");
+        manage_cars.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                manage_carsActionPerformed(evt);
+            }
+        });
 
         show_booking.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         show_booking.setText("Show BOOKINGS");
@@ -56,6 +61,11 @@ public class admin_options extends javax.swing.JFrame {
 
         logout.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         logout.setText("LOGOUT");
+        logout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logoutActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -91,12 +101,24 @@ public class admin_options extends javax.swing.JFrame {
     }// </editor-fold>                        
 
     private void show_bookingActionPerformed(java.awt.event.ActionEvent evt) {                                             
-        // TODO add your handling code here:
+      show_booking obj=new show_booking();
+      obj.setVisible(true);
     }                                            
 
     private void show_customersActionPerformed(java.awt.event.ActionEvent evt) {                                               
-        // TODO add your handling code here:
+       show_customers obj =new show_customers();
+       obj.setVisible(true);
     }                                              
+
+    private void manage_carsActionPerformed(java.awt.event.ActionEvent evt) {                                            
+      manage_cars obj=new manage_cars();
+      obj.setVisible(true);
+    }                                           
+
+    private void logoutActionPerformed(java.awt.event.ActionEvent evt) {                                       
+        admin obj=new admin();
+        obj.setVisible(true);
+    }                                      
 
     /**
      * @param args the command line arguments
