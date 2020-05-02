@@ -48,9 +48,19 @@ public class manage_cars extends javax.swing.JFrame {
 
         logout.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         logout.setText("LOGOUT");
+        logout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logoutActionPerformed(evt);
+            }
+        });
 
         goback.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         goback.setText("GO BACK");
+        goback.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gobackActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -90,6 +100,16 @@ public class manage_cars extends javax.swing.JFrame {
       show_cars obj=new show_cars();
       obj.setVisible(true);
     }                                           
+
+    private void gobackActionPerformed(java.awt.event.ActionEvent evt) {                                       
+        admin_options obj=new admin_options();
+        obj.setVisible(true);
+    }                                      
+
+    private void logoutActionPerformed(java.awt.event.ActionEvent evt) {                                       
+        admin obj=new admin();
+        obj.setVisible(true);
+    }                                      
 
     /**
      * @param args the command line arguments
