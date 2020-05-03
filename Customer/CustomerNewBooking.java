@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+package rapid_rentals;
 /**
  *
  * @author DELL
@@ -46,6 +46,7 @@ public class CustomerNewBooking extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Rapid Rentals");
+        setPreferredSize(new java.awt.Dimension(428, 350));
         getContentPane().setLayout(null);
 
         BookingName_lbl.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -120,12 +121,12 @@ public class CustomerNewBooking extends javax.swing.JFrame {
             }
         });
         getContentPane().add(GoBack_bttn);
-        GoBack_bttn.setBounds(10, 289, 105, 23);
+        GoBack_bttn.setBounds(0, 270, 105, 23);
 
         LogOut_bttn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         LogOut_bttn.setText("LOG OUT");
         getContentPane().add(LogOut_bttn);
-        LogOut_bttn.setBounds(285, 289, 105, 23);
+        LogOut_bttn.setBounds(290, 270, 105, 23);
 
         Rate_lbl.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Rate_lbl.setText("          Rate -15 Rupees per km");

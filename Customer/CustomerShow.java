@@ -8,11 +8,13 @@
  *
  * @author DELL
  */
+package rapid_rentals;
 public class CustomerShow extends javax.swing.JFrame {
 
     /**
      * Creates new form CustomerShow
      */
+    
     public CustomerShow() {
         initComponents();
     }
@@ -33,24 +35,22 @@ public class CustomerShow extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Rapid Rentals");
+        setPreferredSize(new java.awt.Dimension(428, 350));
         getContentPane().setLayout(null);
 
         Show_table.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Show_table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Car Name", "Capacity", "Brand", "Engine", "Fuel", "Model"
             }
         ));
         jScrollPane1.setViewportView(Show_table);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(64, 76, 272, 91);
+        jScrollPane1.setBounds(6, 76, 390, 120);
 
         Goback_bttn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Goback_bttn.setText("GO BACK");
