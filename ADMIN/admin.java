@@ -5,6 +5,8 @@
  */
 package rapid.rentals;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author GAURAV
@@ -33,54 +35,98 @@ public class admin extends javax.swing.JFrame {
         passwd_txt = new javax.swing.JLabel();
         enter_passwd = new javax.swing.JTextField();
         login_btn = new javax.swing.JToggleButton();
-        logout_btn = new javax.swing.JToggleButton();
+        goback = new javax.swing.JToggleButton();
+        validation = new javax.swing.JLabel();
 
         jToggleButton2.setText("jToggleButton2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Rapid Rentals");
-        getContentPane().setLayout(null);
+        setPreferredSize(new java.awt.Dimension(440, 370));
 
         name_txt.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         name_txt.setText("Name");
-        getContentPane().add(name_txt);
-        name_txt.setBounds(122, 85, 40, 17);
 
         name_enter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 name_enterActionPerformed(evt);
             }
         });
-        getContentPane().add(name_enter);
-        name_enter.setBounds(180, 85, 98, 20);
 
         passwd_txt.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         passwd_txt.setText("Password");
-        getContentPane().add(passwd_txt);
-        passwd_txt.setBounds(95, 123, 67, 17);
 
         enter_passwd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 enter_passwdActionPerformed(evt);
             }
         });
-        getContentPane().add(enter_passwd);
-        enter_passwd.setBounds(180, 123, 98, 20);
 
         login_btn.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         login_btn.setText("LOGIN");
-        getContentPane().add(login_btn);
-        login_btn.setBounds(132, 174, 91, 25);
-
-        logout_btn.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        logout_btn.setText("Go Back");
-        logout_btn.addActionListener(new java.awt.event.ActionListener() {
+        login_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                logout_btnActionPerformed(evt);
+                login_btnActionPerformed(evt);
             }
         });
-        getContentPane().add(logout_btn);
-        logout_btn.setBounds(19, 264, 89, 25);
+
+        goback.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        goback.setText("Go Back");
+        goback.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gobackActionPerformed(evt);
+            }
+        });
+
+        validation.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        validation.setForeground(new java.awt.Color(255, 0, 0));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(122, 122, 122)
+                        .addComponent(name_txt)
+                        .addGap(18, 18, 18)
+                        .addComponent(name_enter, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addComponent(goback))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(95, 95, 95)
+                        .addComponent(passwd_txt)
+                        .addGap(18, 18, 18)
+                        .addComponent(enter_passwd, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(142, 142, 142)
+                        .addComponent(login_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(117, 117, 117)
+                        .addComponent(validation, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(185, 185, 185))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(85, 85, 85)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(name_txt)
+                    .addComponent(name_enter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(passwd_txt)
+                    .addComponent(enter_passwd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(validation, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(login_btn)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                .addComponent(goback)
+                .addContainerGap())
+        );
 
         pack();
     }// </editor-fold>                        
@@ -93,9 +139,26 @@ public class admin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }                                            
 
-    private void logout_btnActionPerformed(java.awt.event.ActionEvent evt) {                                           
-        // TODO add your handling code here:
-    }                                          
+    private void gobackActionPerformed(java.awt.event.ActionEvent evt) {                                       
+        front obj=new front();
+        obj.setVisible(true);
+    }                                      
+
+    private void login_btnActionPerformed(java.awt.event.ActionEvent evt) {                                          
+       if(name_enter.getText().trim().isEmpty()){
+           validation.setText("Name Field is empty");
+       }
+       else if(enter_passwd.getText().trim().isEmpty()){
+           validation.setText("Password Field is empty");
+       }
+        else if(name_enter.getText().equals("ADMIN123") && enter_passwd.getText().equals("01234") ){
+        admin_options obj=new admin_options();
+        obj.setVisible(true);
+        }
+        else{
+            JOptionPane.showMessageDialog(this,"Invalid Login Details");
+        }
+    }                                         
 
     /**
      * @param args the command line arguments
@@ -134,11 +197,12 @@ public class admin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify                     
     private javax.swing.JTextField enter_passwd;
+    private javax.swing.JToggleButton goback;
     private javax.swing.JToggleButton jToggleButton2;
     private javax.swing.JToggleButton login_btn;
-    private javax.swing.JToggleButton logout_btn;
     private javax.swing.JTextField name_enter;
     private javax.swing.JLabel name_txt;
     private javax.swing.JLabel passwd_txt;
+    private javax.swing.JLabel validation;
     // End of variables declaration                   
 }
