@@ -8,6 +8,16 @@
  *
  * @author DELL
  */
+package rapid_rentals;
+import javax.swing.JOptionPane;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 public class Customer_Signup extends javax.swing.JFrame {
 
     /**
@@ -26,81 +36,106 @@ public class Customer_Signup extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
 
-        NAME_jLabel1 = new javax.swing.JLabel();
-        NAME_jTextField1 = new javax.swing.JTextField();
-        PASSWORD_jLabel2 = new javax.swing.JLabel();
-        PASSWORD_jTextField2 = new javax.swing.JTextField();
-        SAVE_jToggleButton1 = new javax.swing.JToggleButton();
-        GO_BACK_jToggleButton2 = new javax.swing.JToggleButton();
+        NAME_LABEL = new javax.swing.JLabel();
+        NAME_TXT = new javax.swing.JTextField();
+        PASSWORD_LABEL = new javax.swing.JLabel();
+        PASSWORD_TXT = new javax.swing.JTextField();
+        SAVE_BTTN = new javax.swing.JToggleButton();
+        GO_BACK_BTTN = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Rapid Rentals");
+        setPreferredSize(new java.awt.Dimension(427, 350));
         getContentPane().setLayout(null);
 
-        NAME_jLabel1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        NAME_jLabel1.setText("         NAME");
-        getContentPane().add(NAME_jLabel1);
-        NAME_jLabel1.setBounds(90, 60, 80, 50);
+        NAME_LABEL.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        NAME_LABEL.setText("         NAME");
+        getContentPane().add(NAME_LABEL);
+        NAME_LABEL.setBounds(90, 60, 80, 50);
 
-        NAME_jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        NAME_TXT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NAME_jTextField1ActionPerformed(evt);
+                NAME_TXTActionPerformed(evt);
             }
         });
-        getContentPane().add(NAME_jTextField1);
-        NAME_jTextField1.setBounds(180, 70, 120, 30);
+        getContentPane().add(NAME_TXT);
+        NAME_TXT.setBounds(180, 70, 120, 30);
 
-        PASSWORD_jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        PASSWORD_jLabel2.setText("PASSWORD");
-        getContentPane().add(PASSWORD_jLabel2);
-        PASSWORD_jLabel2.setBounds(90, 120, 70, 40);
+        PASSWORD_LABEL.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        PASSWORD_LABEL.setText("PASSWORD");
+        getContentPane().add(PASSWORD_LABEL);
+        PASSWORD_LABEL.setBounds(90, 120, 70, 40);
 
-        PASSWORD_jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        PASSWORD_TXT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PASSWORD_jTextField2ActionPerformed(evt);
+                PASSWORD_TXTActionPerformed(evt);
             }
         });
-        getContentPane().add(PASSWORD_jTextField2);
-        PASSWORD_jTextField2.setBounds(180, 120, 120, 30);
+        getContentPane().add(PASSWORD_TXT);
+        PASSWORD_TXT.setBounds(180, 120, 120, 30);
 
-        SAVE_jToggleButton1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        SAVE_jToggleButton1.setText("SAVE");
-        SAVE_jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+        SAVE_BTTN.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        SAVE_BTTN.setText("SAVE");
+        SAVE_BTTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SAVE_jToggleButton1ActionPerformed(evt);
+                SAVE_BTTNActionPerformed(evt);
             }
         });
-        getContentPane().add(SAVE_jToggleButton1);
-        SAVE_jToggleButton1.setBounds(133, 179, 100, 30);
+        getContentPane().add(SAVE_BTTN);
+        SAVE_BTTN.setBounds(133, 179, 100, 30);
 
-        GO_BACK_jToggleButton2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        GO_BACK_jToggleButton2.setText("GO BACK");
-        GO_BACK_jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
+        GO_BACK_BTTN.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        GO_BACK_BTTN.setText("GO BACK");
+        GO_BACK_BTTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GO_BACK_jToggleButton2ActionPerformed(evt);
+                GO_BACK_BTTNActionPerformed(evt);
             }
         });
-        getContentPane().add(GO_BACK_jToggleButton2);
-        GO_BACK_jToggleButton2.setBounds(10, 253, 100, 30);
+        getContentPane().add(GO_BACK_BTTN);
+        GO_BACK_BTTN.setBounds(10, 253, 100, 30);
 
         pack();
     }// </editor-fold>                        
 
-    private void PASSWORD_jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {                                                     
+    private void PASSWORD_TXTActionPerformed(java.awt.event.ActionEvent evt) {                                             
         // TODO add your handling code here:
-    }                                                    
+    }                                            
 
-    private void NAME_jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {                                                 
+    private void NAME_TXTActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // TODO add your handling code here:
-    }                                                
+    }                                        
 
-    private void SAVE_jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                                    
+    private void SAVE_BTTNActionPerformed(java.awt.event.ActionEvent evt) {                                          
         // TODO add your handling code here:
-    }                                                   
+        String pass1=PASSWORD_TXT.getText();
+        String name1=NAME_TXT.getText();
+        try {
+            Connection con=(Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/login","root","01234");
+            PreparedStatement pst=(PreparedStatement)con.prepareStatement("INSERT INTO login_info name,password VALUES ?, ?");
+            pst.setString(1,name1);
+            pst.setString(2,pass1);
+            //ResultSet rs=
+                    pst.executeUpdate();
+            //if(rs.next())
+            //{
+             JOptionPane.showMessageDialog(null,"Account Created");
+             //dispose();
+            //}
+            //else
+            //{
+              //  JOptionPane.showMessageDialog(null,"Sorry Account Cannot be created");
+                //dispose();
+            //}
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,e);
+        }
+    }                                         
 
-    private void GO_BACK_jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                                       
+    private void GO_BACK_BTTNActionPerformed(java.awt.event.ActionEvent evt) {                                             
         // TODO add your handling code here:
-    }                                                      
+        Customer_Login o=new Customer_Login();
+        o.setVisible(true);
+    }                                            
 
     /**
      * @param args the command line arguments
@@ -138,11 +173,11 @@ public class Customer_Signup extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify                     
-    private javax.swing.JToggleButton GO_BACK_jToggleButton2;
-    private javax.swing.JLabel NAME_jLabel1;
-    private javax.swing.JTextField NAME_jTextField1;
-    private javax.swing.JLabel PASSWORD_jLabel2;
-    private javax.swing.JTextField PASSWORD_jTextField2;
-    private javax.swing.JToggleButton SAVE_jToggleButton1;
+    private javax.swing.JToggleButton GO_BACK_BTTN;
+    private javax.swing.JLabel NAME_LABEL;
+    private javax.swing.JTextField NAME_TXT;
+    private javax.swing.JLabel PASSWORD_LABEL;
+    private javax.swing.JTextField PASSWORD_TXT;
+    private javax.swing.JToggleButton SAVE_BTTN;
     // End of variables declaration                   
 }
