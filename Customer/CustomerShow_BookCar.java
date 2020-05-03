@@ -8,6 +8,7 @@
  *
  * @author DELL
  */
+package rapid_rentals;
 public class CustomerShow_BookCar extends javax.swing.JFrame {
 
     /**
@@ -26,31 +27,65 @@ public class CustomerShow_BookCar extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
 
-        LOG_OUT_jToggleButton1 = new javax.swing.JToggleButton();
-        Show_bttn = new javax.swing.JToggleButton();
-        New_bttn = new javax.swing.JToggleButton();
+        LOGOUT_BTTN = new javax.swing.JToggleButton();
+        SHOWCARS_BTTN = new javax.swing.JToggleButton();
+        NEWBOOKING_BTTN = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Rapid Rentals");
+        setPreferredSize(new java.awt.Dimension(428, 350));
         getContentPane().setLayout(null);
 
-        LOG_OUT_jToggleButton1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        LOG_OUT_jToggleButton1.setText("LOG OUT");
-        getContentPane().add(LOG_OUT_jToggleButton1);
-        LOG_OUT_jToggleButton1.setBounds(283, 245, 104, 32);
+        LOGOUT_BTTN.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        LOGOUT_BTTN.setText("LOG OUT");
+        LOGOUT_BTTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LOGOUT_BTTNActionPerformed(evt);
+            }
+        });
+        getContentPane().add(LOGOUT_BTTN);
+        LOGOUT_BTTN.setBounds(283, 245, 104, 32);
 
-        Show_bttn.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        Show_bttn.setText("SHOW CARS");
-        getContentPane().add(Show_bttn);
-        Show_bttn.setBounds(140, 50, 130, 40);
+        SHOWCARS_BTTN.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        SHOWCARS_BTTN.setText("SHOW CARS");
+        SHOWCARS_BTTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SHOWCARS_BTTNActionPerformed(evt);
+            }
+        });
+        getContentPane().add(SHOWCARS_BTTN);
+        SHOWCARS_BTTN.setBounds(140, 50, 130, 40);
 
-        New_bttn.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        New_bttn.setText("NEW BOOKING");
-        getContentPane().add(New_bttn);
-        New_bttn.setBounds(140, 120, 130, 40);
+        NEWBOOKING_BTTN.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        NEWBOOKING_BTTN.setText("NEW BOOKING");
+        NEWBOOKING_BTTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NEWBOOKING_BTTNActionPerformed(evt);
+            }
+        });
+        getContentPane().add(NEWBOOKING_BTTN);
+        NEWBOOKING_BTTN.setBounds(140, 120, 130, 40);
 
         pack();
     }// </editor-fold>                        
+
+    private void SHOWCARS_BTTNActionPerformed(java.awt.event.ActionEvent evt) {                                              
+        // TODO add your handling code here:
+     CustomerShow o=new CustomerShow();
+     o.setVisible(true);
+    }                                             
+
+    private void NEWBOOKING_BTTNActionPerformed(java.awt.event.ActionEvent evt) {                                                
+        // TODO add your handling code here:
+        CustomerNewBooking ob=new CustomerNewBooking();
+        ob.setVisible(true);
+    }                                               
+
+    private void LOGOUT_BTTNActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        // TODO add your handling code here:
+        Customer_Login p=new Customer_Login();
+        p.setVisible(true);
+    }                                           
 
     /**
      * @param args the command line arguments
@@ -88,8 +123,8 @@ public class CustomerShow_BookCar extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify                     
-    private javax.swing.JToggleButton LOG_OUT_jToggleButton1;
-    private javax.swing.JToggleButton New_bttn;
-    private javax.swing.JToggleButton Show_bttn;
+    private javax.swing.JToggleButton LOGOUT_BTTN;
+    private javax.swing.JToggleButton NEWBOOKING_BTTN;
+    private javax.swing.JToggleButton SHOWCARS_BTTN;
     // End of variables declaration                   
 }
