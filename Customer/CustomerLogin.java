@@ -3,17 +3,26 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package rapid_rentals;
+import javax.swing.JOptionPane;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Statement;
+
 
 /**
  *
  * @author DELL
  */
-public class CustomerLogin extends javax.swing.JFrame {
+public class Customer_Login extends javax.swing.JFrame {
 
     /**
-     * Creates new form CustomerLogin
+     * Creates new form Customer_Login
      */
-    public CustomerLogin() {
+    public Customer_Login() {
         initComponents();
     }
 
@@ -26,65 +35,106 @@ public class CustomerLogin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        NAME_jLabel1 = new javax.swing.JLabel();
-        NAME_jTextField1 = new javax.swing.JTextField();
-        PASSWORD_jLabel2 = new javax.swing.JLabel();
-        PASSWORD_jTextField2 = new javax.swing.JTextField();
-        LOGIN_jToggleButton1 = new javax.swing.JToggleButton();
-        SIGNUP_jToggleButton2 = new javax.swing.JToggleButton();
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
+        NAME__JLABEL = new javax.swing.JLabel();
+        NAME__TXT = new javax.swing.JTextField();
+        PASSWORD__JLABEL = new javax.swing.JLabel();
+        PASSWORD__TXT = new javax.swing.JTextField();
+        LOGIN_BTTN = new javax.swing.JToggleButton();
+        SIGNUP_BTTN = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Rapid Rentals");
+        setMinimumSize(new java.awt.Dimension(427, 350));
         getContentPane().setLayout(null);
 
-        NAME_jLabel1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        NAME_jLabel1.setText("     NAME");
-        getContentPane().add(NAME_jLabel1);
-        NAME_jLabel1.setBounds(109, 43, 72, 28);
+        NAME__JLABEL.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        NAME__JLABEL.setText("NAME");
+        getContentPane().add(NAME__JLABEL);
+        NAME__JLABEL.setBounds(120, 50, 60, 40);
 
-        NAME_jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        NAME__TXT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NAME_jTextField1ActionPerformed(evt);
+                NAME__TXTActionPerformed(evt);
             }
         });
-        getContentPane().add(NAME_jTextField1);
-        NAME_jTextField1.setBounds(199, 43, 118, 28);
+        getContentPane().add(NAME__TXT);
+        NAME__TXT.setBounds(210, 50, 110, 30);
 
-        PASSWORD_jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        PASSWORD_jLabel2.setText("PASSWORD");
-        getContentPane().add(PASSWORD_jLabel2);
-        PASSWORD_jLabel2.setBounds(103, 97, 78, 30);
-        getContentPane().add(PASSWORD_jTextField2);
-        PASSWORD_jTextField2.setBounds(199, 97, 118, 30);
+        PASSWORD__JLABEL.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        PASSWORD__JLABEL.setText("PASSWORD");
+        getContentPane().add(PASSWORD__JLABEL);
+        PASSWORD__JLABEL.setBounds(100, 110, 70, 30);
+        getContentPane().add(PASSWORD__TXT);
+        PASSWORD__TXT.setBounds(210, 110, 110, 30);
 
-        LOGIN_jToggleButton1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        LOGIN_jToggleButton1.setText("LOGIN");
-        getContentPane().add(LOGIN_jToggleButton1);
-        LOGIN_jToggleButton1.setBounds(143, 158, 105, 31);
+        LOGIN_BTTN.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        LOGIN_BTTN.setText("LOGIN");
+        LOGIN_BTTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LOGIN_BTTNActionPerformed(evt);
+            }
+        });
+        getContentPane().add(LOGIN_BTTN);
+        LOGIN_BTTN.setBounds(160, 180, 90, 30);
 
-        SIGNUP_jToggleButton2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        SIGNUP_jToggleButton2.setText("SIGN UP");
-        getContentPane().add(SIGNUP_jToggleButton2);
-        SIGNUP_jToggleButton2.setBounds(285, 243, 105, 33);
+        SIGNUP_BTTN.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        SIGNUP_BTTN.setText("SIGN UP");
+        SIGNUP_BTTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SIGNUP_BTTNActionPerformed(evt);
+            }
+        });
+        getContentPane().add(SIGNUP_BTTN);
+        SIGNUP_BTTN.setBounds(280, 250, 105, 30);
 
         pack();
     }// </editor-fold>                        
 
-    private void NAME_jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {                                                 
+    private void NAME__TXTActionPerformed(java.awt.event.ActionEvent evt) {                                          
         // TODO add your handling code here:
-    }                                                
+    }                                         
+
+    private void LOGIN_BTTNActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        // TODO add your handling code here:
+         String pass1=PASSWORD__TXT.getText();
+         String name1 =NAME__TXT.getText();
+        
+        try
+        {
+            Connection connection = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/login",
+                        "root", "01234");
+            PreparedStatement st = (PreparedStatement) connection.prepareStatement("Select name, password from login_info where name=? and password=?");
+                   st.setString(1,name1);
+                   st.setString(2,pass1);
+                  
+            
+           
+            ResultSet rs=st.executeQuery();
+            if(rs.next())
+            {
+                CustomerShow_BookCar obj;
+                obj = new CustomerShow_BookCar();
+                obj.setVisible(true);
+                
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null,"Login Failed.Please Try Again");
+                dispose();
+            }
+        }
+        catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(null,e);
+        }
+    }                                          
+
+    private void SIGNUP_BTTNActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        // TODO add your handling code here:
+        Customer_Signup ob=new Customer_Signup();
+        ob.setVisible(true);
+        
+    }                                           
 
     /**
      * @param args the command line arguments
@@ -103,31 +153,30 @@ public class CustomerLogin extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CustomerLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Customer_Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CustomerLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Customer_Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CustomerLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Customer_Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CustomerLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Customer_Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CustomerLogin().setVisible(true);
+                new Customer_Login().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify                     
-    private javax.swing.JToggleButton LOGIN_jToggleButton1;
-    private javax.swing.JLabel NAME_jLabel1;
-    private javax.swing.JTextField NAME_jTextField1;
-    private javax.swing.JLabel PASSWORD_jLabel2;
-    private javax.swing.JTextField PASSWORD_jTextField2;
-    private javax.swing.JToggleButton SIGNUP_jToggleButton2;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JToggleButton LOGIN_BTTN;
+    private javax.swing.JLabel NAME__JLABEL;
+    private javax.swing.JTextField NAME__TXT;
+    private javax.swing.JLabel PASSWORD__JLABEL;
+    private javax.swing.JTextField PASSWORD__TXT;
+    private javax.swing.JToggleButton SIGNUP_BTTN;
     // End of variables declaration                   
 }
