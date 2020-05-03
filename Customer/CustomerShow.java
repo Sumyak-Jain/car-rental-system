@@ -8,12 +8,13 @@
  *
  * @author DELL
  */
-public class CustomerShow extends javax.swing.JFrame {
+package rapid_rentals;
+public class CustomerShow_BookCar extends javax.swing.JFrame {
 
     /**
-     * Creates new form CustomerShow
+     * Creates new form CustomerShow_BookCar
      */
-    public CustomerShow() {
+    public CustomerShow_BookCar() {
         initComponents();
     }
 
@@ -26,44 +27,65 @@ public class CustomerShow extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        Show_table = new javax.swing.JTable();
-        Goback_bttn = new javax.swing.JToggleButton();
-        Logout_bttn = new javax.swing.JToggleButton();
+        LOGOUT_BTTN = new javax.swing.JToggleButton();
+        SHOWCARS_BTTN = new javax.swing.JToggleButton();
+        NEWBOOKING_BTTN = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Rapid Rentals");
+        setPreferredSize(new java.awt.Dimension(428, 350));
         getContentPane().setLayout(null);
 
-        Show_table.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        Show_table.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+        LOGOUT_BTTN.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        LOGOUT_BTTN.setText("LOG OUT");
+        LOGOUT_BTTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LOGOUT_BTTNActionPerformed(evt);
             }
-        ));
-        jScrollPane1.setViewportView(Show_table);
+        });
+        getContentPane().add(LOGOUT_BTTN);
+        LOGOUT_BTTN.setBounds(283, 245, 104, 32);
 
-        getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(64, 76, 272, 91);
+        SHOWCARS_BTTN.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        SHOWCARS_BTTN.setText("SHOW CARS");
+        SHOWCARS_BTTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SHOWCARS_BTTNActionPerformed(evt);
+            }
+        });
+        getContentPane().add(SHOWCARS_BTTN);
+        SHOWCARS_BTTN.setBounds(140, 50, 130, 40);
 
-        Goback_bttn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        Goback_bttn.setText("GO BACK");
-        getContentPane().add(Goback_bttn);
-        Goback_bttn.setBounds(10, 257, 105, 23);
-
-        Logout_bttn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        Logout_bttn.setText("LOG OUT");
-        getContentPane().add(Logout_bttn);
-        Logout_bttn.setBounds(285, 257, 105, 23);
+        NEWBOOKING_BTTN.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        NEWBOOKING_BTTN.setText("NEW BOOKING");
+        NEWBOOKING_BTTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NEWBOOKING_BTTNActionPerformed(evt);
+            }
+        });
+        getContentPane().add(NEWBOOKING_BTTN);
+        NEWBOOKING_BTTN.setBounds(140, 120, 130, 40);
 
         pack();
     }// </editor-fold>                        
+
+    private void SHOWCARS_BTTNActionPerformed(java.awt.event.ActionEvent evt) {                                              
+        // TODO add your handling code here:
+     CustomerShow o=new CustomerShow();
+     o.setVisible(true);
+    }                                             
+
+    private void NEWBOOKING_BTTNActionPerformed(java.awt.event.ActionEvent evt) {                                                
+        // TODO add your handling code here:
+        CustomerNewBooking ob=new CustomerNewBooking();
+        ob.setVisible(true);
+    }                                               
+
+    private void LOGOUT_BTTNActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        // TODO add your handling code here:
+        Customer_Login p=new Customer_Login();
+        p.setVisible(true);
+    }                                           
 
     /**
      * @param args the command line arguments
@@ -82,28 +104,27 @@ public class CustomerShow extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CustomerShow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CustomerShow_BookCar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CustomerShow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CustomerShow_BookCar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CustomerShow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CustomerShow_BookCar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CustomerShow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CustomerShow_BookCar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CustomerShow().setVisible(true);
+                new CustomerShow_BookCar().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify                     
-    private javax.swing.JToggleButton Goback_bttn;
-    private javax.swing.JToggleButton Logout_bttn;
-    private javax.swing.JTable Show_table;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JToggleButton LOGOUT_BTTN;
+    private javax.swing.JToggleButton NEWBOOKING_BTTN;
+    private javax.swing.JToggleButton SHOWCARS_BTTN;
     // End of variables declaration                   
 }
