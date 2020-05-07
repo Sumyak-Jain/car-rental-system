@@ -1,3 +1,5 @@
+//this code is to add new cars in your system
+
 private void addActionPerformed(java.awt.event.ActionEvent evt) {                                    
          String url = "jdbc:mysql://localhost:3306/login";
         String user = "root";
