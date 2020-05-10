@@ -4,6 +4,17 @@
  * and open the template in the editor.
  */
 package rapid_rentals;
+import javax.swing.JOptionPane;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+
+import javax.swing.JTextField;
+
 /**
  *
  * @author DELL
@@ -26,18 +37,19 @@ public class CustomerNewBooking extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
 
+        s = new javax.swing.JLabel();
         BookingName_lbl = new javax.swing.JLabel();
-        Bookingname_txt = new javax.swing.JTextField();
+        tf1 = new javax.swing.JTextField();
         StartDate_lbl = new javax.swing.JLabel();
-        StartDate_txt = new javax.swing.JTextField();
+        tf2 = new javax.swing.JTextField();
         EndDate_lbl = new javax.swing.JLabel();
-        EndDate_txt = new javax.swing.JTextField();
+        tf3 = new javax.swing.JTextField();
         CarName_lbl = new javax.swing.JLabel();
-        CarName_txt = new javax.swing.JTextField();
+        tf4 = new javax.swing.JTextField();
         kmTravelled_lbl = new javax.swing.JLabel();
-        kmTravelled_txt = new javax.swing.JTextField();
+        tf5 = new javax.swing.JTextField();
         EstimatedBill_lbl = new javax.swing.JLabel();
-        Bill_txt = new javax.swing.JTextField();
+        tf6 = new javax.swing.JTextField();
         ShowBill_bttn = new javax.swing.JToggleButton();
         Done_bttn = new javax.swing.JToggleButton();
         GoBack_bttn = new javax.swing.JToggleButton();
@@ -53,63 +65,85 @@ public class CustomerNewBooking extends javax.swing.JFrame {
         BookingName_lbl.setText("BOOKING NAME");
         getContentPane().add(BookingName_lbl);
         BookingName_lbl.setBounds(71, 0, 105, 28);
-        getContentPane().add(Bookingname_txt);
-        Bookingname_txt.setBounds(207, 0, 108, 28);
+
+        tf1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(tf1);
+        tf1.setBounds(207, 0, 108, 28);
 
         StartDate_lbl.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         StartDate_lbl.setText("START DATE");
         getContentPane().add(StartDate_lbl);
         StartDate_lbl.setBounds(71, 39, 105, 27);
-        getContentPane().add(StartDate_txt);
-        StartDate_txt.setBounds(207, 39, 108, 27);
+        getContentPane().add(tf2);
+        tf2.setBounds(207, 39, 108, 27);
 
         EndDate_lbl.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         EndDate_lbl.setText("END DATE");
         getContentPane().add(EndDate_lbl);
         EndDate_lbl.setBounds(71, 72, 105, 29);
-        getContentPane().add(EndDate_txt);
-        EndDate_txt.setBounds(207, 72, 108, 29);
+        getContentPane().add(tf3);
+        tf3.setBounds(207, 72, 108, 29);
 
         CarName_lbl.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         CarName_lbl.setText("CAR NAME");
         getContentPane().add(CarName_lbl);
         CarName_lbl.setBounds(71, 112, 105, 28);
 
-        CarName_txt.addActionListener(new java.awt.event.ActionListener() {
+        tf4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CarName_txtActionPerformed(evt);
+                tf4ActionPerformed(evt);
             }
         });
-        getContentPane().add(CarName_txt);
-        CarName_txt.setBounds(207, 112, 108, 28);
+        getContentPane().add(tf4);
+        tf4.setBounds(207, 112, 108, 28);
 
         kmTravelled_lbl.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         kmTravelled_lbl.setText("km  TRAVELLED ");
         getContentPane().add(kmTravelled_lbl);
         kmTravelled_lbl.setBounds(71, 146, 105, 23);
 
-        kmTravelled_txt.addActionListener(new java.awt.event.ActionListener() {
+        tf5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                kmTravelled_txtActionPerformed(evt);
+                tf5ActionPerformed(evt);
             }
         });
-        getContentPane().add(kmTravelled_txt);
-        kmTravelled_txt.setBounds(207, 146, 108, 28);
+        getContentPane().add(tf5);
+        tf5.setBounds(207, 146, 108, 28);
 
         EstimatedBill_lbl.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         EstimatedBill_lbl.setText("ESTIMATED BILL");
         getContentPane().add(EstimatedBill_lbl);
         EstimatedBill_lbl.setBounds(18, 209, 105, 28);
-        getContentPane().add(Bill_txt);
-        Bill_txt.setBounds(141, 209, 105, 24);
+
+        tf6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf6ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(tf6);
+        tf6.setBounds(141, 209, 105, 24);
 
         ShowBill_bttn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         ShowBill_bttn.setText("SHOW BILL");
+        ShowBill_bttn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ShowBill_bttnActionPerformed(evt);
+            }
+        });
         getContentPane().add(ShowBill_bttn);
-        ShowBill_bttn.setBounds(276, 209, 99, 28);
+        ShowBill_bttn.setBounds(276, 209, 110, 30);
 
         Done_bttn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Done_bttn.setText("DONE");
+        Done_bttn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Done_bttnActionPerformed(evt);
+            }
+        });
         getContentPane().add(Done_bttn);
         Done_bttn.setBounds(141, 255, 105, 23);
 
@@ -125,6 +159,11 @@ public class CustomerNewBooking extends javax.swing.JFrame {
 
         LogOut_bttn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         LogOut_bttn.setText("LOG OUT");
+        LogOut_bttn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LogOut_bttnActionPerformed(evt);
+            }
+        });
         getContentPane().add(LogOut_bttn);
         LogOut_bttn.setBounds(290, 270, 105, 23);
 
@@ -136,17 +175,82 @@ public class CustomerNewBooking extends javax.swing.JFrame {
         pack();
     }// </editor-fold>                        
 
-    private void CarName_txtActionPerformed(java.awt.event.ActionEvent evt) {                                            
+    private void tf4ActionPerformed(java.awt.event.ActionEvent evt) {                                    
         // TODO add your handling code here:
-    }                                           
+    }                                   
 
-    private void kmTravelled_txtActionPerformed(java.awt.event.ActionEvent evt) {                                                
+    private void tf5ActionPerformed(java.awt.event.ActionEvent evt) {                                    
         // TODO add your handling code here:
-    }                                               
+    }                                   
 
     private void GoBack_bttnActionPerformed(java.awt.event.ActionEvent evt) {                                            
         // TODO add your handling code here:
+        CustomerShow_BookCar ob=new CustomerShow_BookCar();
+        ob.setVisible(true);
     }                                           
+
+    private void LogOut_bttnActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        // TODO add your handling code here:
+        Customer_Login o=new Customer_Login();
+        o.setVisible(true);
+    }                                           
+
+    private void ShowBill_bttnActionPerformed(java.awt.event.ActionEvent evt) {                                              
+        // TODO add your handling code here:
+        double a=Double.parseDouble(tf5.getText());
+        double nt=15*a;
+        tf6.setText(""+nt);
+        
+        
+    }                                             
+
+    private void Done_bttnActionPerformed(java.awt.event.ActionEvent evt) {                                          
+ String url = "jdbc:mysql://localhost:3306/login";
+        String user = "root";
+        String password = "01234";
+ 
+        String a=tf1.getText();
+        String b=tf2.getText();
+        String c=tf3.getText();
+        String d=tf4.getText();
+        String e=tf5.getText();
+       double r=Double.parseDouble(e);
+        double nt=15*r;
+        
+        
+                 
+        try {
+            Connection conn = DriverManager.getConnection(url, user, password);
+            String sql="insert into booking_info(Booking_Name,Start_Date,End_Date,Car_name,Bill_amount,km_Travelled)" + "values (?,?,?,?,?,?)";
+            
+            PreparedStatement statement = conn.prepareStatement(sql);
+ 
+              statement.setString(1, a);
+              statement.setString(2, b);
+              statement.setString(3, c);
+              statement.setString(4, d);
+              statement.setString(5, e);
+              statement.setDouble(6, nt);
+              
+ 
+            int row = statement.executeUpdate();
+            if (row > 0) {
+                JOptionPane.showMessageDialog(null,"Booking Done");
+            }
+            conn.close();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }       
+    }                                         
+
+    private void tf1ActionPerformed(java.awt.event.ActionEvent evt) {                                    
+        // TODO add your handling code here:
+    }                                   
+
+    private void tf6ActionPerformed(java.awt.event.ActionEvent evt) {                                    
+        // TODO add your handling code here:
+       
+    }                                   
 
     /**
      * @param args the command line arguments
@@ -184,22 +288,25 @@ public class CustomerNewBooking extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify                     
-    private javax.swing.JTextField Bill_txt;
     private javax.swing.JLabel BookingName_lbl;
-    private javax.swing.JTextField Bookingname_txt;
     private javax.swing.JLabel CarName_lbl;
-    private javax.swing.JTextField CarName_txt;
     private javax.swing.JToggleButton Done_bttn;
     private javax.swing.JLabel EndDate_lbl;
-    private javax.swing.JTextField EndDate_txt;
     private javax.swing.JLabel EstimatedBill_lbl;
     private javax.swing.JToggleButton GoBack_bttn;
     private javax.swing.JToggleButton LogOut_bttn;
     private javax.swing.JLabel Rate_lbl;
     private javax.swing.JToggleButton ShowBill_bttn;
     private javax.swing.JLabel StartDate_lbl;
-    private javax.swing.JTextField StartDate_txt;
     private javax.swing.JLabel kmTravelled_lbl;
-    private javax.swing.JTextField kmTravelled_txt;
+    private javax.swing.JLabel s;
+    private javax.swing.JTextField tf1;
+    private javax.swing.JTextField tf2;
+    private javax.swing.JTextField tf3;
+    private javax.swing.JTextField tf4;
+    private javax.swing.JTextField tf5;
+    private javax.swing.JTextField tf6;
     // End of variables declaration                   
+
+
 }
