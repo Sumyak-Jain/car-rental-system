@@ -31,7 +31,7 @@ public class CustomerShow extends javax.swing.JFrame {
     }
     
 @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         Goback_bttn = new javax.swing.JToggleButton();
@@ -81,19 +81,22 @@ public class CustomerShow extends javax.swing.JFrame {
         jScrollPane2.setBounds(10, 30, 380, 130);
 
         pack();
-    }// </editor-fold>                        
+    }// </editor-fold>//GEN-END:initComponents
 
-    private void Logout_bttnActionPerformed(java.awt.event.ActionEvent evt) {                                            
+    private void Logout_bttnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Logout_bttnActionPerformed
         // TODO add your handling code here:
         Customer_Login o=new Customer_Login();
+        this.setVisible(false);
         o.setVisible(true);
-    }                                           
+    }//GEN-LAST:event_Logout_bttnActionPerformed
 
-    private void Goback_bttnActionPerformed(java.awt.event.ActionEvent evt) {                                            
+    private void Goback_bttnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Goback_bttnActionPerformed
         // TODO add your handling code here:
         CustomerShow_BookCar o=new CustomerShow_BookCar();
+        
+        this.setVisible(false);
         o.setVisible(true);
-    }                                           
+    }//GEN-LAST:event_Goback_bttnActionPerformed
 private void DisplayTable()      
 {
       /**
@@ -149,11 +152,11 @@ private void DisplayTable()
         });
     }
 
-    // Variables declaration - do not modify                     
+    // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton Goback_bttn;
     private javax.swing.JToggleButton Logout_bttn;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable tab1;
-    // End of variables declaration                   
+    // End of variables declaration//GEN-END:variables
 
 }

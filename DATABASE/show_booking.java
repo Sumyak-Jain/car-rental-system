@@ -1,3 +1,5 @@
+//this code is for to show the booking list in table
+
 package rapid.rentals;
 
 import net.proteanit.sql.DbUtils;

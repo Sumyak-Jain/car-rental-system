@@ -1,3 +1,5 @@
+//this code is for showing the customers list 
+
 package rapid.rentals;
 import net.proteanit.sql.DbUtils;
 import java.sql.Connection;

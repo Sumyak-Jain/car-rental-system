@@ -1,3 +1,5 @@
+//this code is for showing the list of cars in a table
+
 package rapid.rentals;
 import net.proteanit.sql.DbUtils;
 import java.sql.Connection;
