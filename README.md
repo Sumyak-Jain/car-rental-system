@@ -3,7 +3,8 @@ A application to rent cars
 
 ## what's is use?
 + It have two sections
-  + a
+  - **ADMIN**
+  - **CUSTOMER
 
 
 ## Language and Technologies used
