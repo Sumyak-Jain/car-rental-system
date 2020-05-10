@@ -19,7 +19,6 @@ A application to rent cars
 
 ## Language and Technologies used
 + JAVA
-+ cmd networking commands to change your ip
 + MySQL 
 + JAVA Swing
 + JDBC
@@ -27,3 +26,7 @@ A application to rent cars
 ## Platform used
 + NetBeans IDE
 + MySQL workbench
+
+## Members
++ [ARSH SALUJA](https://github.com/arshsaluja)
++ [SUMYAK JAIN](https://github.com/sumyak)
