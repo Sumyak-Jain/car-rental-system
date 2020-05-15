@@ -27,6 +27,4 @@ A application to rent cars
 + NetBeans IDE
 + MySQL workbench
 
-## Members
-+ [ARSH SALUJA](https://github.com/arshsaluja)
-+ [SUMYAK JAIN](https://github.com/sumyak)
+
